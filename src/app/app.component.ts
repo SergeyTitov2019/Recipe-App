@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import {FormGroup, NgForm} from "@angular/forms";
-import { ServerElements } from "./types/server-elements";
+import {Component, ViewEncapsulation} from '@angular/core';
+import {NgForm} from "@angular/forms";
+import {ServerElements} from "./types/server-elements";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 
 
