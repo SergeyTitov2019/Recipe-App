@@ -1,12 +1,12 @@
 button{
-  margin-top: 1rem;
-  width: 10rem;
+  margin: 1rem 1rem 0 0;
+  min-width: 12rem;
 }
 .container-fluid{
   margin: 2rem auto;
   border-radius: 5px;
   border: 2px solid #244e0e;
-  width: 30%;
+  width: 60%;
   padding: 2rem;
 }
 
@@ -24,3 +24,22 @@ div > p{
   background-color: #eee4e4;
 }
 
+button{
+  width: 100px;
+  margin-right: 1rem;
+}
+
+input{
+  margin-bottom: 2rem;
+}
+h4{
+  margin-bottom: 2rem;
+}
+.row.panel{
+  margin-top: 2rem;
+}
+
+em{
+  color: #cd2011;
+  font-weight: 800;
+}

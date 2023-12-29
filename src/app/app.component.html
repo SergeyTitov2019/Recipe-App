@@ -1,34 +1,50 @@
-<div class="container-fluid">
-<div class="card"  >
-  <div class="">
-    <div class="">
-      <label for="floatingInputGroup1">Position</label>
-      <input type="text" class="form-control" id="floatingInputGroup1" [(ngModel)]="position">
-      <p>{{position}}</p>
+<!--<app-header> </app-header>-->
+<!--<app-recipes></app-recipes>-->
+<!--<app-shopping-list></app-shopping-list>-->
 
-      <hr>
-      <label for="floatingInputGroup2"  innerText="Name">Name</label>
 
-      <input #nameInput type="text"  id="floatingInputGroup2" class="form-control" [(ngModel)]="name">
-      <p>{{name}}</p>
-    </div>
-    <button class="btn btn-primary"  type="submit" [disabled]="name === ''" (click)="onSubmit(nameInput.value)">Push</button>
-  </div>
+<div class=" container-fluid wrapper">
+  <app-cockpit
+    (serviceCreated)="onServerAdded($event)"
+    (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
   <hr>
-
-  <div class="">
-
-    <label for="floatingInputGroup3"  innerText="Name">Server Info</label>
-
-    <input #serverNameInput type="text"  id="floatingInputGroup3" class="form-control" [(ngModel)]="serverName">
-    <p *ngIf="serverName && flag; else noServer">Server was created with name: {{serverName}}</p>
-    <ng-template #noServer>
-      <p>Server was not created yet</p>
-    </ng-template>
+  <div class="row">
+  <app-server-element
+    *ngFor="let serverElement of serverElements"
+    [srvElement]="serverElement"
+  ></app-server-element>
   </div>
-  <button class="btn btn-primary"  type="submit" [disabled]="serverName === ''" (click)="onServerCreated(serverNameInput.value)">Push</button>
-  <button class="btn btn-danger"  style="margin-left: 10px" type="reset" (click)="onResetServer(serverNameInput.value)" >Reset</button>
 </div>
 
-</div>
+<!--<div class=" container-fluid wrapper">-->
 
+<!--  <div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--      <h4>Add new Server or Blueprint</h4>-->
+<!--      <label for="servername">Server Name</label>-->
+<!--      <input type="text" class="form-control" id="servername" [(ngModel)]="newServerName">-->
+<!--      <label for="servercontent">Server Content</label>-->
+<!--      <input type="text" class="form-control" id="servercontent" [(ngModel)]="newServerContent">-->
+<!--      <button class="btn btn-primary" (click)="onAddServer()" [disabled]="!newServerName">Add Server</button>-->
+<!--      <button class="btn btn-primary" (click)="onAddBlueprint()" [disabled]="!newServerContent">Add Blueprint</button>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="row panel">-->
+<!--    <div class="col-xs-12">-->
+<!--    <div class="">-->
+<!--      <div class="panel panel-default" *ngFor="let element of serverElements">-->
+<!--        <div class="panel-heading">{{element.name}}</div>-->
+<!--        <div class="panel-body">-->
+<!--          <p>-->
+<!--            <strong *ngIf="element.type === 'server'">{{element.content}}</strong>-->
+<!--            <em *ngIf="element.type === 'blueprint'">{{element.content}}</em>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  </div>-->
+<!---->
+<!--</div>-->
