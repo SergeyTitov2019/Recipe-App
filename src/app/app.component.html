@@ -1,50 +1,30 @@
-<!--<app-header> </app-header>-->
-<!--<app-recipes></app-recipes>-->
-<!--<app-shopping-list></app-shopping-list>-->
-
-
-<div class=" container-fluid wrapper">
-  <app-cockpit
-    (serviceCreated)="onServerAdded($event)"
-    (blueprintCreated)="onBlueprintAdded($event)"
-  ></app-cockpit>
-  <hr>
+<app-header (featureSelect)="onNavigate($event)"> </app-header>
+<div class="container">
   <div class="row">
-  <app-server-element
-    *ngFor="let serverElement of serverElements"
-    [srvElement]="serverElement"
-  ></app-server-element>
+    <div class="col-xs-12">
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature === 'shopping-list'"></app-shopping-list>
+    </div>
   </div>
 </div>
 
+
+
+
+
 <!--<div class=" container-fluid wrapper">-->
-
+<!--  <app-cockpit-->
+<!--    (serviceCreated)="onServerAdded($event)"-->
+<!--    (blueprintCreated)="onBlueprintAdded($event)"-->
+<!--  ></app-cockpit>-->
+<!--  <hr>-->
 <!--  <div class="row">-->
-<!--    <div class="col-xs-12">-->
-<!--      <h4>Add new Server or Blueprint</h4>-->
-<!--      <label for="servername">Server Name</label>-->
-<!--      <input type="text" class="form-control" id="servername" [(ngModel)]="newServerName">-->
-<!--      <label for="servercontent">Server Content</label>-->
-<!--      <input type="text" class="form-control" id="servercontent" [(ngModel)]="newServerContent">-->
-<!--      <button class="btn btn-primary" (click)="onAddServer()" [disabled]="!newServerName">Add Server</button>-->
-<!--      <button class="btn btn-primary" (click)="onAddBlueprint()" [disabled]="!newServerContent">Add Blueprint</button>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="row panel">-->
-<!--    <div class="col-xs-12">-->
-<!--    <div class="">-->
-<!--      <div class="panel panel-default" *ngFor="let element of serverElements">-->
-<!--        <div class="panel-heading">{{element.name}}</div>-->
-<!--        <div class="panel-body">-->
-<!--          <p>-->
-<!--            <strong *ngIf="element.type === 'server'">{{element.content}}</strong>-->
-<!--            <em *ngIf="element.type === 'blueprint'">{{element.content}}</em>-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  </div>-->
+<!--  <app-server-element-->
+<!--    *ngFor="let serverElement of serverElements"-->
+<!--    [srvElement]="serverElement"-->
+<!--  >-->
 <!---->
+<!--  </app-server-element>-->
+<!--  </div>-->
 <!--</div>-->
+
