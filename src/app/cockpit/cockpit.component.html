@@ -1,0 +1,25 @@
+<!--<div class="row">-->
+<!--  <div class="col-xs-12">-->
+<!--    <h4>Add new Server or Blueprint</h4>-->
+<!--    <label for="servername">Server Name</label>-->
+<!--    <input type="text" class="form-control" id="servername">-->
+<!--    <label for="servercontent">Server Content</label>-->
+<!--    <input type="text" class="form-control" id="servercontent">-->
+<!--    <hr>-->
+<!--    <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>-->
+<!--    <button class="btn btn-primary" (click)="onAddBlueprint()">Add Server</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <h4>Add new Server or Blueprint</h4>
+    <label for="servername">Server Name</label>
+    <input #serverNameInput type="text" class="form-control" id="servername" >
+    <label for="servercontent">Server Content</label>
+    <input #serverContentInput type="text" class="form-control" id="servercontent" >
+    <button class="btn btn-primary" (click)="onAddServer(serverNameInput)" >Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)" [disabled]="flagName">Add Blueprint</button>
+  </div>
+</div>
