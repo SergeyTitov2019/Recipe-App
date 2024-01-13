@@ -13,6 +13,8 @@ import { ShoppingEditComponent } from './components/shoping-list/shopping-edit/s
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { DropdownDirective } from './components/shared/dropdown.directive';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { RecipeStartComponent } from './components/recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { DropdownDirective } from './components/shared/dropdown.directive';
     ShoppingEditComponent,
     CockpitComponent,
     ServerElementComponent,
-    DropdownDirective
+    DropdownDirective,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

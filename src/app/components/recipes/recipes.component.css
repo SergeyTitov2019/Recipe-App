@@ -2,3 +2,19 @@
   padding-left: 5rem;
 }
 
+h4{
+}
+
+
+.right-wrapper{
+  margin-top: 5.5rem;
+  margin-left: 10px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #d2cece;
+  width: 90%;
+
+}
