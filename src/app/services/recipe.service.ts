@@ -2,13 +2,15 @@ import {Injectable, EventEmitter} from '@angular/core';
 import {Recipe} from "../components/recipes/recipe.model";
 import {ShoppingListService} from "../components/shoping-list/services/shopping-list.service";
 import {Ingredient} from "../components/shared/ingredients.model";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
 
-  recipeSelected = new EventEmitter<Recipe>()
+  // recipeSelected = new EventEmitter<Recipe>()
+  recipeSelected = new Subject<Recipe>()
 
   private recipes: Recipe[] = [
     new Recipe('Test Name', 'Test Descr', 'https://www.foodandwine.com/thmb/dX7pNh_WX83ESqb9VJuvkBwVKwM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Braciole-FT-RECIPE1122-66acf49cef0e4390bec780945709e7f3.jpg'),
