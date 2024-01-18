@@ -13,8 +13,12 @@ export class RecipeService {
   recipeSelected = new Subject<Recipe>()
 
   private recipes: Recipe[] = [
-    new Recipe('Test Name', 'Test Descr', 'https://www.foodandwine.com/thmb/dX7pNh_WX83ESqb9VJuvkBwVKwM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Braciole-FT-RECIPE1122-66acf49cef0e4390bec780945709e7f3.jpg'),
-    new Recipe('Greek Salad', 'Greek Salad Description', 'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg'),
+    new Recipe('Tasty Steak', 'Tasty Stake Description',
+      'https://www.foodandwine.com/thmb/dX7pNh_WX83ESqb9VJuvkBwVKwM=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Braciole-FT-RECIPE1122-66acf49cef0e4390bec780945709e7f3.jpg',
+      [{name: 'Meat', amount: 10}, {name: 'Oil', amount: 100}, {name: 'Butter', amount: 20}, {name: 'Tomato', amount: 5}]),
+    new Recipe('Greek Salad', 'Greek Salad Description',
+      'https://art-lunch.ru/content/uploads/2018/07/Greek_salad_01.jpg',
+      [{name: 'Milk', amount: 10}, {name: 'Vinegar', amount: 100}]),
   ]
 
   constructor(private shoppingListService: ShoppingListService) {
@@ -29,7 +33,7 @@ export class RecipeService {
   }
 
   addIngredientsToShoppingList(ingredients: any): void {
-    this.shoppingListService.addIngredients(ingredients)
+    this.shoppingListService.addIngredient(ingredients)
   }
 
 }

@@ -1,0 +1,16 @@
+.col-xs-12 > button {
+  width: 120px;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+label{
+  color: black;
+}
+
+.wrapper{
+  margin-left: 2rem;
+}
+.ingredients-mode input{
+  margin-bottom: 1rem;
+}
