@@ -7,7 +7,6 @@
           <button type="button" class="btn btn-danger">Cancel</button>
         </div>
       </div>
-
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
@@ -19,7 +18,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
@@ -30,13 +28,11 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-xs-12">
           <img src="" class="img-responsive">
         </div>
       </div>
-
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
@@ -48,30 +44,29 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-xs-12" formArrayName="ingredients">
-
           <div class="row ingredients-mode" *ngFor="let ingredientCtrl of controls; let i = index"
                [formGroupName]="i" >
-
             <div class="col-xs-8" >
               <input type="text"
                      formControlName="name"
                      class="form-control">
             </div>
-
             <div class="col-xs-2">
               <input type="number"
                      formControlName="amount"
                      class="form-control">
             </div>
-
             <div class="col-xs-2">
-              <button class="btn btn-danger">Delete</button>
+              <button type="button"  class="btn btn-danger" (click)="onDeleteIngredient(i)">Delete</button>
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <hr>
+        <button type="button" class="btn btn-primary" (click)="onAddIngredient()">Add ingredient</button>
       </div>
 
     </form>
