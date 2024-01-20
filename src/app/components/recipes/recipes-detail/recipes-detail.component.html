@@ -30,13 +30,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-6 description-list-wrapper">
       {{ recipe.description }}
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      Ingredients
+  <div class="row" *ngFor="let ingredient of recipe.ingredients; let i = index">
+    <div class="col-xs-6 ingredient-list-wrapper" >
+      {{i+1}}.
+      <div class="col-xs-12 ingredient-list">
+        <span>{{ ingredient.name }}</span>
+        <span>{{ ingredient.amount }}</span>
+      </div>
+
+
     </div>
   </div>
 </div>
