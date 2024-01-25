@@ -3,6 +3,7 @@ import {Recipe} from "../components/recipes/recipe.model";
 import {ShoppingListService} from "../components/shoping-list/services/shopping-list.service";
 import {Subject} from "rxjs";
 import {recipeList} from "../data/data.recipe";
+import {DataStorageService} from "./data-storage.service";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = recipeList
 
-  constructor(private shoppingListService: ShoppingListService) {
+  constructor( private shoppingListService: ShoppingListService ) {
   }
 
   getRecipes(): Recipe[] {
@@ -23,6 +24,11 @@ export class RecipeService {
 
   getRecipe(index: number) {
     return this.recipes[index]
+  }
+
+  setRecipe(recipes: any) {
+   this.recipes = recipes
+    this.recipeChanged.next(this.recipes.slice())
   }
 
   addIngredientsToShoppingList(ingredients: any): void {
