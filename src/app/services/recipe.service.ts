@@ -5,9 +5,7 @@ import {Subject} from "rxjs";
 import {recipeList} from "../data/data.recipe";
 import {DataStorageService} from "./data-storage.service";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class RecipeService {
 
   recipeSelected = new Subject<Recipe>()
@@ -15,7 +13,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = recipeList
 
-  constructor( private shoppingListService: ShoppingListService ) {
+  constructor(private shoppingListService: ShoppingListService) {
   }
 
   getRecipes(): Recipe[] {
@@ -27,7 +25,7 @@ export class RecipeService {
   }
 
   setRecipe(recipes: any) {
-   this.recipes = recipes
+    this.recipes = recipes
     this.recipeChanged.next(this.recipes.slice())
   }
 
@@ -48,6 +46,7 @@ export class RecipeService {
     this.recipes.splice(index, 1)
     this.recipeChanged.next(this.recipes.slice())
   }
+
   deleteRecipe(index: number) {
     this.recipes.splice(index, 1)
     this.recipeChanged.next(this.recipes.slice())
